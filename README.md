@@ -16,7 +16,7 @@ Ansible project for installation and configuration of HAproxy service
     ```
 * This variable is used in `./roles/haproxy/templates/haproxy.cfg.j2` to list backend servers for load balancing
 
-### Notes
+### Notes - how to use/modify
 
  * Inside `run.yml` `httpd_ip` variable is overloaded from group_vars with: `httpd_ip: '{{inventory_hostname}}'`
 This variable is used in `./roles/httpd/templates/indey.html.cfg.j2` to simply display ip address of current web instance - for testing
@@ -24,7 +24,7 @@ This variable is used in `./roles/httpd/templates/indey.html.cfg.j2` to simply d
  * Also inside `run.yml` `haproxy_ip` variable is overloaded from group_vars with: `haproxy_ip: '{{inventory_hostname}}'`
 This variable is used in `./roles/httpd/defaults/main.yml` for haproxy_frontend_bind_address (binding frontend ip address)
 
-* `httpd_servers_ips` variable is also overloaded, its function is explained at start of this readme
+* `httpd_servers_ips` variable is also overloaded, its function is explained at the start of this readme
 
 ### Step 1: Create SSH key
  * Create own ssh-key `ssh-keygen -t ed25519`
